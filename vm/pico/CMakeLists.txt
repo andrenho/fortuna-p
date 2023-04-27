@@ -14,7 +14,7 @@ set(CMAKE_CXX_STANDARD 17)
 # source files
 #
 
-set(VM ../main.cc)
+include(${CMAKE_CURRENT_SOURCE_DIR}/../sources.cmake)
 
 #
 # target: VM (on Pico)
@@ -30,3 +30,9 @@ pico_enable_stdio_usb(fortunap-vm-pico 1)
 #pico_enable_stdio_uart(fortunap-vm-pico 1)
 
 pico_add_extra_outputs(fortunap-vm-pico)
+
+#
+# upload
+#
+
+add_custom_target(upload COMMAND bash ./upload.sh DEPENDS fortunap-vm-pico)

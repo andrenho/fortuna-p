@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD 17)
 # source files
 #
 
-set(VM ../main.cc ../memory/process.hh ../memory/stack.cc ../memory/stack.hh ../memory/process.cc ../vm/vm.cc ../vm/vm.hh ../config.hh ../debugger/debugger.cc ../debugger/debugger.hh)
+include(${CMAKE_CURRENT_SOURCE_DIR}/../sources.cmake)
 
 #
 # target: VM (on PC)
