@@ -14,7 +14,7 @@ set(CMAKE_CXX_STANDARD 17)
 # source files
 #
 
-set(VM ../main.c)
+set(VM ../main.cc)
 
 #
 # target: VM (on Pico)
