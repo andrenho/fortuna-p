@@ -1,17 +1,18 @@
 cmake_minimum_required(VERSION 3.13)
-project(fortunap-vm-pc CXX)
+project(fortunap-vm-pc C CXX)
 
 #
 # general defines
 #
 
+set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
 #
 # source files
 #
 
-set(VM ../main.cc)
+set(VM ../main.c)
 
 #
 # target: VM (on PC)
