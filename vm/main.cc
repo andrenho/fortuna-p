@@ -3,12 +3,12 @@
 #include "vm/vm.hh"
 #include "debugger/debugger.hh"
 
-#ifdef PICO_DEFAULT_BOARD
+#ifdef PICO
 #  include "pico/stdlib.h"
 #endif
 
 int main() {
-#ifdef PICO_DEFAULT_BOARD
+#ifdef PICO
     stdio_init_all();
 #endif
 

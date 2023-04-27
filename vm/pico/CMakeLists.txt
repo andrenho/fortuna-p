@@ -25,6 +25,7 @@ pico_sdk_init()
 add_executable(fortunap-vm-pico ${VM})
 
 target_link_libraries(fortunap-vm-pico pico_stdlib)
+add_definitions(-DPICO=1)
 
 pico_enable_stdio_usb(fortunap-vm-pico 1)
 #pico_enable_stdio_uart(fortunap-vm-pico 1)
@@ -35,4 +36,4 @@ pico_add_extra_outputs(fortunap-vm-pico)
 # upload
 #
 
-add_custom_target(upload COMMAND bash ./upload.sh DEPENDS fortunap-vm-pico)
+add_custom_target(upload COMMAND bash ../upload.sh DEPENDS fortunap-vm-pico)
