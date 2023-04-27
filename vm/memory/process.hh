@@ -4,6 +4,7 @@
 #include <vector>
 #include <cstdint>
 #include "stack.hh"
+#include "../config.hh"
 
 struct Process {
     Process(uint8_t const* code_array, size_t code_sz, size_t min_stack_sz, size_t max_stack_sz);
@@ -11,7 +12,7 @@ struct Process {
     std::vector<uint8_t> code;
     Stack stack;
 
-    uint32_t pc = 0;
+    addr_t pc = 0;
 };
 
 #endif //PROCESS_HH_
