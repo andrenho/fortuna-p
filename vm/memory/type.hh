@@ -2,6 +2,7 @@
 #define TYPE_HH_
 
 #include <cstdint>
+#include <utility>
 
 #define LIMIT_MAX_TINY_INT (0b1111)
 #define LIMIT_MIN_TINY_INT (-LIMIT_MAX_TINY_INT + 1)
@@ -14,6 +15,8 @@
 #define MASK_SMALL_INT 0b00010000
 #define MASK_INT       0b00100000
 #define MASK_LARGE_INT 0b00110000
+
+std::pair<int32_t, size_t> extract_int(uint8_t* arr);
 
 /*
 

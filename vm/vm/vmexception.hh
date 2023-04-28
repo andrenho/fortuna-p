@@ -18,5 +18,14 @@ private:
     VMExceptionType exception_type_;
 };
 
+class NotImplementedException : public std::exception {
+public:
+    NotImplementedException() = default;
+
+    [[nodiscard]] char const *what() const noexcept override
+    {
+        return "Not implemented";
+    }
+};
 
 #endif //VMEXCEPTION_HH_

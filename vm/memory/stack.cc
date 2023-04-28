@@ -28,3 +28,19 @@ size_t Stack::push_raw_int(uint8_t *data)
         throw VMException(F_ERR_INVALID_INT);
     }
 }
+
+int32_t Stack::pop_int()
+{
+    uint8_t arr[] = {
+            stack_.back(),
+            *(&stack_.back() - 1),
+            *(&stack_.back() - 2),
+            *(&stack_.back() - 3),
+            *(&stack_.back() - 4) };
+
+    auto [value, sz] = extract_int(arr);
+
+    stack_.resize(stack_.size() - sz);
+
+    return value;
+}

@@ -20,5 +20,12 @@ void VM::step()
         case F_PUSHINT:
             process.pc += process.stack.push_raw_int(&(*(process.code.begin() + (++process.pc))));
             break;
+        case F_ADD: {
+                int32_t a = process.stack.pop_int();
+                int32_t b = process.stack.pop_int();
+                process.stack.push_int(a + b);
+                // TODO - flags
+            }
+            break;
     }
 }

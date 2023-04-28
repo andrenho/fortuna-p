@@ -11,6 +11,8 @@ public:
 
     size_t push_raw_int(uint8_t* data);
 
+    int32_t pop_int();
+
     [[nodiscard]] std::vector<uint8_t> const& stack() const { return stack_; }
 
 private:
