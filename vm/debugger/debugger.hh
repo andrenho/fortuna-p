@@ -14,6 +14,8 @@ private:
     size_t current_process_ = 0;
 
     void print_registers(Process const &process) const;
+
+    void print_stack(Process const &process);
 };
 
 #endif //DEBUGGER_HH_

@@ -18,6 +18,12 @@ void Debugger::run()
                 case 'r':
                     print_registers(process);
                     break;
+                case 'S':
+                    print_stack(process);
+                    break;
+                case 's':
+                    vm_.step();
+                    break;
                 case 10:
                 case 13:
                     break; // ignore new lines
@@ -30,5 +36,12 @@ void Debugger::run()
 
 void Debugger::print_registers(Process const &process) const
 {
-    printf("pc %x\n", process.pc);
+    printf("pc %02x\n", process.pc);
+}
+
+void Debugger::print_stack(Process const &process)
+{
+    for (auto i = process.stack.stack().rbegin(); i != process.stack.stack().rend(); ++i)
+        printf("%02x ", *i);
+    printf("\n");
 }

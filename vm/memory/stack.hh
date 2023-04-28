@@ -9,8 +9,12 @@ class Stack {
 public:
     Stack(size_t min_sz, size_t max_sz);
 
+    size_t push_raw_int(uint8_t* data);
+
+    [[nodiscard]] std::vector<uint8_t> const& stack() const { return stack_; }
+
 private:
-    std::vector<uint8_t> data_;
+    std::vector<uint8_t> stack_;
     size_t min_sz_;
     size_t max_sz_;
 };
